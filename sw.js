@@ -1,4 +1,5 @@
-const CACHE_NAME = 'guaguatime-v2';
+const CACHE_NAME = 'guaguatime-v3';
+
 const urlsToCache = [
     '/',
     '/index.html',
@@ -18,27 +19,48 @@ const urlsToCache = [
     '/manifest.json'
 ];
 
+// 🚀 INSTALL (forzar nueva versión)
 self.addEventListener('install', event => {
+    self.skipWaiting(); // importante
+
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(urlsToCache))
+            .then(cache => {
+                return cache.addAll(urlsToCache);
+            })
     );
 });
 
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => response || fetch(event.request))
-    );
-});
-
+// 🚀 ACTIVATE (limpiar viejo cache)
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(keys => {
             return Promise.all(
-                keys.filter(key => key !== CACHE_NAME)
-                    .map(key => caches.delete(key))
+                keys.map(key => {
+                    if (key !== CACHE_NAME) {
+                        return caches.delete(key);
+                    }
+                })
             );
-        })
+        }).then(() => self.clients.claim()) // importante
+    );
+});
+
+// 🚀 FETCH (estrategia inteligente)
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        fetch(event.request)
+            .then(response => {
+                // Guarda copia en cache
+                const responseClone = response.clone();
+                caches.open(CACHE_NAME).then(cache => {
+                    cache.put(event.request, responseClone);
+                });
+                return response;
+            })
+            .catch(() => {
+                // Si no hay internet → usa cache
+                return caches.match(event.request);
+            })
     );
 });
