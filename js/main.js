@@ -209,16 +209,3 @@ function updateLanguageOnUI() {
 
 // Start app
 init();
-
-const btnModo = document.getElementById("modoOscuro");
-
-if(btnModo){
-  btnModo.onclick = () => {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("dark", document.body.classList.contains("dark"));
-  };
-
-  if(localStorage.getItem("dark") === "true"){
-    document.body.classList.add("dark");
-  }
-}
