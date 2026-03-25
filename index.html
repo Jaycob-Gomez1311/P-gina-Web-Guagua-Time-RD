@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1e3c72">
+    <title>GuaguaTime RD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1 class="header__title">🚍 GuaguaTime RD</h1>
+            <div class="header__controls">
+                <button class="btn btn--icon" id="lang-toggle" aria-label="Cambiar idioma" title="Idioma">🌐 ES</button>
+                <button class="btn btn--icon" id="darkmode-toggle" aria-label="Modo oscuro" title="Modo oscuro">🌙</button>
+                <button class="btn btn--icon" id="savings-toggle" aria-label="Modo ahorro" title="Modo ahorro">⚡</button>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="search-section">
+                <form id="route-form" class="form">
+                    <div class="form__group">
+                        <label for="origin" id="origin-label">Origen</label>
+                        <select id="origin" class="form__select" required></select>
+                    </div>
+                    <div class="form__group">
+                        <label for="destination" id="dest-label">Destino</label>
+                        <select id="destination" class="form__select" required></select>
+                    </div>
+                    <div class="form__actions">
+                        <button type="submit" class="btn btn--primary" id="search-btn">Buscar rutas</button>
+                    </div>
+                </form>
+
+                <div class="alerts-panel">
+                    <h3 id="alerts-title">Alertas activas</h3>
+                    <div id="alerts-container" class="alerts-list"></div>
+                </div>
+
+                <div class="sort-panel">
+                    <label for="sort-by" id="sort-label">Ordenar por:</label>
+                    <select id="sort-by" class="sort-select">
+                        <option value="time">⏱️ Tiempo</option>
+                        <option value="cost">💰 Costo</option>
+                        <option value="transfers">🔄 Transbordos</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="routes-container">
+                    <h2 id="routes-title">Rutas encontradas</h2>
+                    <div id="routes-list" class="routes-list"></div>
+                </div>
+
+                <div class="favorites-container">
+                    <h2 id="favorites-title">Rutas favoritas</h2>
+                    <div id="favorites-list" class="favorites-list"></div>
+                </div>
+            </section>
+        </main>
+
+        <div class="map-container">
+            <h3 id="map-title">Mapa esquemático de rutas</h3>
+            <div id="schematic-map" class="schematic-map"></div>
+        </div>
+
+        <footer class="footer">
+            <p id="footer-text">GuaguaTime RD - Simulador de transporte público</p>
+        </footer>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

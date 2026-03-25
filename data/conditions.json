@@ -1,0 +1,5 @@
+[
+    { "id": "rain", "name": "Lluvia", "time_pct": 20, "cost_extra": 0 },
+    { "id": "peak", "name": "Hora pico", "time_pct": 30, "cost_extra": 10 },
+    { "id": "strike", "name": "Paro de transporte", "time_pct": 50, "cost_extra": 20 }
+]

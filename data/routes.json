@@ -1,0 +1,12 @@
+[
+    { "id": 1, "from": 1, "to": 2, "mode": "concho", "baseTime": 15, "baseCost": 25 },
+    { "id": 2, "from": 2, "to": 3, "mode": "guagua", "baseTime": 10, "baseCost": 20 },
+    { "id": 3, "from": 3, "to": 4, "mode": "carro público", "baseTime": 12, "baseCost": 30 },
+    { "id": 4, "from": 4, "to": 5, "mode": "motoconcho", "baseTime": 8, "baseCost": 40 },
+    { "id": 5, "from": 5, "to": 6, "mode": "concho", "baseTime": 12, "baseCost": 25 },
+    { "id": 6, "from": 6, "to": 7, "mode": "guagua", "baseTime": 10, "baseCost": 20 },
+    { "id": 7, "from": 7, "to": 8, "mode": "carro público", "baseTime": 14, "baseCost": 30 },
+    { "id": 8, "from": 1, "to": 3, "mode": "guagua", "baseTime": 25, "baseCost": 35 },
+    { "id": 9, "from": 2, "to": 5, "mode": "concho", "baseTime": 18, "baseCost": 30 },
+    { "id": 10, "from": 3, "to": 7, "mode": "motoconcho", "baseTime": 20, "baseCost": 50 }
+]
