@@ -615,3 +615,117 @@ button:hover {
 button:active {
   transform: scale(0.95);
 }
+
+/* ===== FONDO MODERNO ===== */
+body {
+  background: radial-gradient(circle at top, #1e3c72 0%, #0f172a 100%);
+}
+
+/* ===== CENTRADO GENERAL ===== */
+.main,
+.map-container,
+.footer {
+  text-align: center;
+}
+
+/* ===== TARJETAS MÁS BONITAS ===== */
+.route-card,
+.favorite-card,
+.form,
+.alerts-panel,
+.routes-container,
+.favorites-container,
+.map-container {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== HOVER MÁS PRO ===== */
+.route-card:hover,
+.favorite-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ===== BOTONES MÁS LLAMATIVOS ===== */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+/* ===== BOTÓN PRINCIPAL MÁS PRO ===== */
+.btn--primary {
+  background: linear-gradient(135deg, #1e3c72, #3b82f6);
+  box-shadow: 0 4px 15px rgba(30,60,114,0.4);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 10px 30px rgba(59,130,246,0.5);
+}
+
+/* ===== HEADER MÁS LIMPIO ===== */
+.header {
+  background: rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== TITULO MÁS LLAMATIVO ===== */
+.header__title {
+  text-align: center;
+  width: 100%;
+}
+
+/* ===== SELECT MÁS BONITOS ===== */
+.form__select {
+  text-align: center;
+}
+
+/* ===== ALERTAS MÁS VIVAS ===== */
+.alert-item {
+  border-left-width: 6px;
+}
+
+.alert-item:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* ===== SCROLL MÁS SUAVE ===== */
+.routes-list,
+.favorites-list {
+  scroll-behavior: smooth;
+}
+
+/* ===== MAPA MÁS LIMPIO ===== */
+.schematic-map {
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== FOOTER MÁS SUAVE ===== */
+.footer {
+  opacity: 0.7;
+}
+
+/* ===== DARK MODE MEJORADO ===== */
+body.dark-mode {
+  background: radial-gradient(circle at top, #020617, #020617 60%, #000000);
+}
+
+/* ===== TRANSICIONES MÁS SUAVES ===== */
+* {
+  transition: all 0.25s ease;
+}
