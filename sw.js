@@ -3,7 +3,7 @@ const CACHE_NAME = 'guaguatime-v4';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/css/style.css',
+    '/css/styles.css',
     '/js/main.js',
     '/js/dataLoader.js',
     '/js/routeCalculator.js',
