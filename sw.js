@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guaguatime-v3';
+const CACHE_NAME = 'guaguatime-v4';
 
 const urlsToCache = [
     '/',
